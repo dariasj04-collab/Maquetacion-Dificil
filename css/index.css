@@ -75,11 +75,9 @@ p{
     font-weight: 400;
 }
 
-a:hover{
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
+
+
+
 
 .big{
     font-size: 18px;
@@ -109,6 +107,24 @@ a:hover{
     padding: 16px 32px;
     display: inline-block;
     font-size: 15px;
+    border: 1px solid transparent;
+
+    &:hover{
+       background-color: transparent;
+       color: black;
+       border: 1px solid black;
+    }
+
+    &:active{
+        background-color: var(--color-light-grey);
+        transform: scale(0.9);
+    }
+
+    transition: background-color 300ms, color 300ms, border-color 300ms, transform 300ms;
+    transition-timing-function: cubic-bezier(.65,-0.55,.29,1.52);
+    
+    
+   
 }
 
 .menu-link{
@@ -116,13 +132,23 @@ a:hover{
     font-size: 15px;
 }
 
-.link{
-    
+
+.link {
+
     font-size: 15px;
     font-weight: 500;
     display: inline-flex;
     gap: var(--space-xxs);
     align-items: center;
+
+    &:hover {
+
+        color: var(--color-grey);
+
+    }
+
+    transition: 300ms;
+
 }
 
 .block{
@@ -249,7 +275,8 @@ a:hover{
     padding: var(--space-lg);
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);   
+    gap: var(--space-md);
+
 }
 
 .services__text{
